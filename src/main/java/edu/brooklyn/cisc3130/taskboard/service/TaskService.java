@@ -14,6 +14,7 @@ import edu.brooklyn.cisc3130.taskboard.repository.TaskRepository;
 
 @Service
 @Transactional
+
 public class TaskService {
 
     private final TaskRepository taskRepository;
@@ -32,6 +33,7 @@ public class TaskService {
     }
 
     public Task getTaskById(Integer id) {
+        
         Task task = taskRepository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
 
